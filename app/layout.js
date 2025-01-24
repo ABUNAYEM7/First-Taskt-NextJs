@@ -40,19 +40,23 @@ export default async function RootLayout({ children }) {
                 </Link>
               </div>
               <div className="flex-none space-x-12">
-                <Link className=" hover:underline" href={"/"}>
+                <Link 
+                className=" hover:underline" href={"/"}>
                   Home
                 </Link>
-                <Link className="hover:underline" href={"/profile"}>
+                <Link 
+                className="hover:underline" href={"/profile"}>
                   Profile
                 </Link>
                 {
                   user ? 
                   <LogoutLink
                   className="hover:underline"
+                  postLogoutRedirectURL="/"
                   >Log out</LogoutLink>
                   :
                   <LoginLink
+                  postLoginRedirectURL="/profile"
                   className="hover:underline"
                   >
                   Sign in
